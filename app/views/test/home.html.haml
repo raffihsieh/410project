@@ -1,14 +1,68 @@
 :javascript
+!!!
 
-%h1 Recipe Finder
-%p Search for a recipe!
-%div
-  %form{:action=>'parse_form', :method=>'get'}
-    %input{:name=>'search_box' }
-    %input{:type=>'submit', :value=>"go"}
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Cookle
+    %link{:href => "http://twitter.github.io/bootstrap/assets/css/bootstrap.css", :rel => "stylesheet"}/
+    %link{:href => "http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css", :rel => "stylesheet"}/
+    %link{:href => "http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}/
+    %link{:href => "http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}/
+    %link{:href => "http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}/
+    %link{:href => "http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
+    %link{:href => "http://twitter.github.io/bootstrap/assets/ico/favicon.png", :rel => "shortcut icon"}/
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "http://"} Cookle
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                %a{:href => "http://"} Home
+              %li
+                %a{:href => "http://"} About
+              %li
+                %a{:href => "http://"} Contact
+            %form.navbar-form.pull-right
+              %input.span2{:placeholder => "Email", :type => "text"}/
+              %input.span2{:placeholder => "Password", :type => "password"}/
+              %button.btn{:type => "submit"} Sign in
+              %button.btn{:type => "submit"} Register
+    .container
+      .row-fluid
+        .span12
+        .span12
+        .span12
+        .span6.offset4
+          %img.img-rounded{:src => "../rails_projects/410project/app/views/test/Cookle.gif"}/
+      .row-fluid
+        .span12
+        .span8.offset3
+          %input.span8{:placeholder => "Search for a recipe!", :type => "text", :action => 'parse_form', :method =>'get'}/
+          .row-fluid
+            .span6.offset2
+              %button.btn{:type => "button", :value=> "go"} Cookle Search
+              %button.btn.btn-primary{:type => "button"} I'm feeling hungry
+            .span1
+    %script{:src => "./test_files/jquery.js"}
+    %script{:src => "./test_files/bootstrap-transition.js"}
+    %script{:src => "./test_files/bootstrap-alert.js"}
+    %script{:src => "./test_files/bootstrap-modal.js"}
+    %script{:src => "./test_files/bootstrap-dropdown.js"}
+    %script{:src => "./test_files/bootstrap-scrollspy.js"}
+    %script{:src => "./test_files/bootstrap-tab.js"}
+    %script{:src => "./test_files/bootstrap-tooltip.js"}
+    %script{:src => "./test_files/bootstrap-popover.js"}
+    %script{:src => "./test_files/bootstrap-button.js"}
+    %script{:src => "./test_files/bootstrap-collapse.js"}
+    %script{:src => "./test_files/bootstrap-carousel.js"}
+    %script{:src => "./test_files/bootstrap-typeahead.js"}
 
-  = form_tag("/search", :method => "get") do
-    = label_tag(:search_box, "Find a Recipe!")
-    = text_field_tag(:search_box)
-    = submit_tag("Go!")
+
 
