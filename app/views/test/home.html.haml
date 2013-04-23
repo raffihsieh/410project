@@ -3,10 +3,6 @@
 %h1 Recipe Finder
 %p Search for a recipe!
 %div
-  %form{:action=>'parse_form', :method=>'get'}
-    %input{:name=>'search_box1' }
-    %input{:type=>'submit', :value=>"go"}
-
   = form_tag("/search", :method => "get") do
     = label_tag(:search_box, "Find a Recipe!")
     = text_field_tag(:search_box)
