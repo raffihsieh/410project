@@ -1,7 +1,8 @@
 *.rbc
 *.sassc
 .sass-cache
-.swp
+*.swp
+*.swo
 capybara-*.html
 .rspec
 /.bundle
