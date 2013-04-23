@@ -40,10 +40,15 @@
         .span12
         .span12
         .span6.offset4
-          %img.img-rounded{:src => "../rails_projects/410project/app/views/test/Cookle.gif"}/
+          %img.img-rounded{:src => "/home/spike/rails_projects/410project/app/views/test/Cookle.gif"}/
       .row-fluid
         .span12
         .span8.offset3
+          = form_tag("/search", :method => "get") do
+            //= label_tag(:search_box, "Find a Recipe!")
+            = text_field_tag(:search_box, :placeholder)
+            .row-fluid
+              = submit_tag("Cookle Search")
           %input.span8{:placeholder => "Search for a recipe!", :type => "text", :action => 'parse_form', :method =>'get'}/
           .row-fluid
             .span6.offset2
@@ -63,6 +68,4 @@
     %script{:src => "./test_files/bootstrap-collapse.js"}
     %script{:src => "./test_files/bootstrap-carousel.js"}
     %script{:src => "./test_files/bootstrap-typeahead.js"}
-
-
 
