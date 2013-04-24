@@ -1,12 +1,14 @@
 :javascript
 !!!
 
-%html{:lang => "en"}
+%html{:lang => "en",}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Cookle
-    %link{:href => "http://twitter.github.io/bootstrap/assets/css/bootstrap.css", :rel => "stylesheet"}/
+    %link{:href => "~/rails_projects/410project/bootstrap/css/bootstrap.css", :rel => "stylesheet"}/
     %link{:href => "http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css", :rel => "stylesheet"}/
+    :css 
+      body { padding-top : 0px;} 
     %link{:href => "http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}/
     %link{:href => "http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}/
     %link{:href => "http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}/
@@ -34,27 +36,30 @@
               %input.span2{:placeholder => "Password", :type => "password"}/
               %button.btn{:type => "submit"} Sign in
               %button.btn{:type => "submit"} Register
-    .container
+   
       .row-fluid
         .span12
         .span12
         .span12
+        .span12
+        .span12
         .span6.offset4
-          %img.img-rounded{:src => "/home/spike/rails_projects/410project/app/views/test/Cookle.gif"}/
+          %img.img-rounded{:src => "http://createfunnylogo.com/logo/google/Cookle.jpg"}/
       .row-fluid
         .span12
         .span8.offset3
           = form_tag("/search", :method => "get") do
             //= label_tag(:search_box, "Find a Recipe!")
-            = text_field_tag(:search_box, :placeholder)
+            = text_field_tag :search_box, nil, { placeholder:'Search for a recipe', class:'span7'}
             .row-fluid
-              = submit_tag("Cookle Search")
-          %input.span8{:placeholder => "Search for a recipe!", :type => "text", :action => 'parse_form', :method =>'get'}/
-          .row-fluid
-            .span6.offset2
-              %button.btn{:type => "button", :value=> "go"} Cookle Search
-              %button.btn.btn-primary{:type => "button"} I'm feeling hungry
-            .span1
+              .span5.offset2
+                .btn-toolbar
+                  = submit_tag :"Cookle Search",class:'btn' 
+                  %button.btn.btn-primary{:type => "button"} I'm feeling hungry
+                 
+              
+                
+  
     %script{:src => "./test_files/jquery.js"}
     %script{:src => "./test_files/bootstrap-transition.js"}
     %script{:src => "./test_files/bootstrap-alert.js"}
