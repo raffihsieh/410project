@@ -23,13 +23,27 @@ class TestController < ApplicationController
     #logger.debug(page.xpath("//ctl00_CenterColumnPlaceHolder_rptResults_ctl00_ucResultContainer_ucRecipeGrid_imgLink"))
     #logger.debug(page.css("#img-link"))
     logger.debug("...................................................")
-    arr = []
+    arrs = []
+    pics = []
+    names = []
+
     for link in page.css(".img-link") do
-      href = link.to_s().split("href")
-      url = href[1].split("\"")
-      arr.push(url[1])
-      logger.debug(url[1])
+      href = link["href"]
+      href = "http://www.allrecipes.com#{href}"
+      arrs.push("#{href}")
+    #  arrs.push(href)
+    
+      logger.debug(href)
       logger.debug("------------------------------------------")
+    end
+
+    for link in page.css('a.img-link img') do
+
+      src  = link["src"]
+      name = link["title"]
+      pics.push(src)
+      names.push(name)
+
     end
     #logger.debug(page.css(".img-link"))
 
@@ -37,8 +51,11 @@ class TestController < ApplicationController
     puts page.class # => Nokogiri::HTML::Document
 
     @results = words[0]
-    @values = arr
-
+    @values = arrs
+    @recipes = names.uniq
+    @images = pics.uniq
+ 
+   
   end
 
 end
