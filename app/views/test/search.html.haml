@@ -1,10 +1,14 @@
-blah
+
 = @results.to_s
 
+
 - @values.each do |value|
-  %a(href="http://www.allrecipes.com#{value}") 
-    link
-    %br
-  
-  
+  - @images.each do |image|
+    %a(href="#{value}") 
+      %img(src= "#{image}")
+      %br
+
+- @recipes.each do |recipe|
+  "#{recipe}"
+
 
