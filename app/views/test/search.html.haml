@@ -1,12 +1,14 @@
 blah
 = @results.to_s
 
-- @values.each do |value|
-  %a(href="#{value}") 
-    link
-    %br
-- @recipes.each do |recipe|
-  "#{recipe}"
 
-- @images.each do |image|
-  "#{image}"
+- @values.each do |value|
+  - @images.each do |image|
+    %a(href="#{value}") 
+      %img(src= "#{image}")
+      %br
+
+/- @recipes.each do |recipe|
+/"#{recipe}"
+
+

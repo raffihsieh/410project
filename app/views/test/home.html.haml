@@ -18,11 +18,11 @@
       .span8.offset3
         = form_tag("/search", :method => "get") do
           //= label_tag(:search_box, "Find a Recipe!")
-          = text_field_tag :search_box, nil, { placeholder:'Search for a recipe', class:'span7'}
+          = text_field_tag :search_box, nil, {:placeholder =>'Search for a recipe',:class =>'span7'}
           .row-fluid
             .span5.offset2
               .btn-toolbar
-                = submit_tag :"Cookle Search",class:'btn' 
+                = submit_tag :"Cookle Search",:class => 'btn' 
                 %button.btn.btn-primary{:type => "button"} I'm feeling hungry
                  
               
