@@ -4,7 +4,12 @@
     :css 
       body { padding-top : 40px;}
   %body
-   
+
+    %p
+      = form_tag("/search", :method => "get") do
+        //= label_tag(:search_box, "Find a Recipe!")
+        = text_field_tag :search_box, nil, :placeholder => @results.to_s, :class=>'span7'
+        = submit_tag "Cookle Search", :class => 'btn' 
     .container
       .row
         .span4
@@ -18,49 +23,53 @@
           %a(href="#{@values[1]}") 
             %img.img-rounded{:src => "#{@images[1]}"}/
           %h5 #{@recipes[1]}
+          %p #{@ingredients_list[1]}
         
         .span4
           %a(href="#{@values[2]}") 
             %img.img-rounded{:src => "#{@images[2]}"}/
           %h5 #{@recipes[2]}
+          %p #{@ingredients_list[2]}
       
       .row
         .span4
           %a(href="#{@values[3]}") 
             %img.img-rounded{:src => "#{@images[4]}"}/
           %h5 #{@recipes[3]}
-
-
+          %p #{@ingredients_list[3]}
+  
         .span4
           %a(href="#{@values[4]}")
             %img.img-rounded{:src => "#{@images[5]}"}/
           %h5 #{@recipes[4]}
+          %p #{@ingredients_list[4]}
 
         .span4
           %a(href="#{@values[5]}")
             %img.img-rounded{:src => "#{@images[6]}"}/
           %h5 #{@recipes[5]}
-
+          %p #{@ingredients_list[5]}
 
       .row
         .span4
           %a(href="#{@values[6]}")
             %img.img-rounded{:src => "#{@images[7]}"}/
           %h5 #{@recipes[6]}
-
+          %p #{@ingredients_list[6]}
 
         .span4
           %a(href="#{@values[7]}")
             %img.img-rounded{:src => "#{@images[8]}"}/
           %h5 #{@recipes[7]}
+          %p #{@ingredients_list[7]}
 
         .span4
           %a(href="#{@values[8]}")
             %img.img-rounded{:src => "#{@images[9]}"}/
           %h5 #{@recipes[8]}
+          %p #{@ingredients_list[8]}
 
 
-    = @results.to_s
 
 
 
