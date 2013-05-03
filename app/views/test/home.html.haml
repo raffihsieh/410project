@@ -5,46 +5,24 @@
     :css 
       body { padding-top : 0px;} 
   %body
-    .navbar.navbar-inverse.navbar-fixed-top
-      .navbar-inner
-        .container
-          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "http://"} Cookle
-          .nav-collapse.collapse
-            %ul.nav
-              %li.active
-                %a{:href => "http://"} Home
-              %li
-                %a{:href => "http://"} About
-              %li
-                %a{:href => "http://"} Contact
-            %form.navbar-form.pull-right
-              %input.span2{:placeholder => "Email", :type => "text"}/
-              %input.span2{:placeholder => "Password", :type => "password"}/
-              %button.btn{:type => "submit"} Sign in
-              %button.btn{:type => "submit"} Register
-   
-      .row-fluid
-        .span12
-        .span12
-        .span12
-        .span12
-        .span12
-        .span6.offset4
-          %img.img-rounded{:src => "http://createfunnylogo.com/logo/google/Cookle.jpg"}/
-      .row-fluid
-        .span12
-        .span8.offset3
-          = form_tag("/search", :method => "get") do
-            //= label_tag(:search_box, "Find a Recipe!")
-            = text_field_tag :search_box, nil, :placeholder => 'Search for a recipe', :class=>'span7'
-            .row-fluid
-              .span5.offset2
-                .btn-toolbar
-                  = submit_tag "Cookle Search", :class => 'btn' 
-                  %button.btn.btn-primary{:type => "button"} I'm feeling hungry
+    .row-fluid
+      .span12
+      .span12
+      .span12
+      .span12
+      .span12
+      .span6.offset4
+        %img.img-rounded{:src => "http://createfunnylogo.com/logo/google/Cookle.jpg"}/
+    .row-fluid
+      .span12
+      .span8.offset3
+        = form_tag("/search", :method => "get") do
+          //= label_tag(:search_box, "Find a Recipe!")
+          = text_field_tag :search_box, nil, :placeholder => 'Search for a recipe', :class=>'span7'
+          .row-fluid
+            .span5.offset2
+              .btn-toolbar
+                = submit_tag "Cookle Search", :class => 'btn' 
+                %button.btn.btn-primary{:type => "button"} I'm feeling hungry
               
                 
