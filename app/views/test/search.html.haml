@@ -1,14 +1,65 @@
 
-= @results.to_s
+%html{:lang => "en",}
+  %head
+    %title "Recipe Display"
+  %body
+    .container
+      .row
+        .span4
+          %h3 #{@recipes[0]} 
+          %p
+            %a(href="#{@values[0]}") 
+              %img.img-rounded{:src => "#{@images[0]}"}/
+
+        .span4
+          %h3 #{@recipes[1]}
+          %p
+            %a(href="#{@values[1]}")
+              %img.img-rounded{:src => "#{@images[1]}"}/
+        .span4
+          %h3 #{@recipes[2]}
+          %p
+            %a(href="#{@values[2]}")
+              %img.img-rounded{:src => "#{@images[2]}"}/
+
+      .row
+        .span4
+          %h3 #{@recipes[3]}
+          %p
+            %a(href="#{@values[3]}")
+              %img.img-rounded{:src => "#{@images[3]}"}/
+
+        .span4
+          %h3 #{@recipes[4]}
+          %p
+            %a(href="#{@values[4]}")
+              %img.img-rounded{:src => "#{@images[4]}"}/
+        .span4
+          %h3 #{@recipes[5]}
+          %p
+            %a(href="#{@values[5]}")
+              %img.img-rounded{:src => "#{@images[5]}"}/
+
+      .row
+        .span4 
+          %h3 #{@recipes[6]}
+          %p   
+            %a(href="#{@values[6]}")
+              %img.img-rounded{:src => "#{@images[6]}"}/
+
+        .span4 
+          %h3 #{@recipes[7]}
+          %p   
+            %a(href="#{@values[7]}")
+              %img.img-rounded{:src => "#{@images[7]}"}/
+        .span4 
+          %h3 #{@recipes[8]}
+          %p   
+            %a(href="#{@values[8]}")
+              %img.img-rounded{:src => "#{@images[8]}"}/
 
 
-- @values.each do |value|
-  - @images.each do |image|
-    %a(href="#{value}") 
-      %img(src= "#{image}")
-      %br
+    = @results.to_s
 
-- @recipes.each do |recipe|
-  "#{recipe}"
 
 
