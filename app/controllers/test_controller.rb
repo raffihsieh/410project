@@ -37,33 +37,35 @@ class TestController < ApplicationController
       logger.debug("------------------------------------------")
     end
 
-    for link in page.css('a.img-link img') do
+    for link in page.css('a.img-link  img') do
 
       src  = link["src"]
       name = link["title"]
       pics.push(src)
       names.push(name)
-
+   
     end
-    #logger.debug(page.css(".img-link"))
+     logger.debug(page.css(".img-link"))
 
-    logger.debug("============================================")
-    puts page.class # => Nokogiri::HTML::Document
+     logger.debug("============================================")
+     puts page.class # => Nokogiri::HTML::Document
 
-    ingredients = []
-    for p in urls do
-      page = Nokogiri::HTML(open(p))
-      list = []
-      for i in page.css('.ingredient-name') do
-        list.push(i)
-      end
-      ingredients.push(list)
-    end
+     ingredients = []
+     for p in urls do
+       page = Nokogiri::HTML(open(p))
+       list = []
+       for i in page.xpath'//span[@class = "ingredient-name"]/text()' do
+         q= i.text
+         list.push(q)
+       end
+       ingredients.push(list)
+     end
 
     @results = words[0]
     @values = urls
     @recipes = names.uniq
     @images = pics.uniq
+    
     @ingredients_list = ingredients
  
    
