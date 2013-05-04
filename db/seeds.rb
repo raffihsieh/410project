@@ -56,7 +56,7 @@ ingredient_list = [
  [ "cream of chicken soup", 1.19 ],
  [ "golden raisins", 4.59 ],
  [ "peanut oil", 5.19 ],
- [ "croissants" 8.59 ],
+ [ "croissants", 8.59 ],
  [ "chutney", 5.89 ],
  [ "lettuce", 1.99 ],
  [ "chicken bullion", 1.59 ],
