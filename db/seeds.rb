@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+Ingredients.delete_all
 
 ingredient_list = [
  [ "chicken breast", 7.99 ],
