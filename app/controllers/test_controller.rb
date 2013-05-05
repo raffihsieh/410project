@@ -61,7 +61,7 @@ class TestController < ApplicationController
        ingredients.push(list)
      end
 
-    @results = words[0]
+    @results = words
     @values = urls
     @recipes = names.uniq
     @images = pics.uniq

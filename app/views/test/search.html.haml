@@ -4,7 +4,7 @@
     :css 
       body { padding-top : 40px;}
   %body
-
+    
     %p
       = form_tag("/search", :method => "get") do
         //= label_tag(:search_box, "Find a Recipe!")
@@ -13,63 +13,96 @@
     .container
       .row
         .span4
-          %a(href="#{@values[0]}") 
-            %img.img-rounded{:src => "#{@images[0]}"}/
-          %h5 #{@recipes[0]}
-          %p #{@ingredients_list[0]}
+          %a(href= "#{@values[0]}")
+            %img#recipe-image-1.img-rounded{ "data-content" => "<ol><li>Chicken:$3.49</li><li>Salt:$0.89</li><li>Black pepper:$1.59</li><li>Paprika:$2.3</li><li>Butter:$1.2</li><li>Apple:$0.79</li><li>Onion:$0.69</li><li>Curry Powder:$4.29</li><li>Cream of mushroom soup:$3.4</li><li>Cream:$4.5</li></ol>", "data-html" => "true", "data-origianal-title" => "Ingredient Prices", "data-toggle" => "popover", :src => "#{@images[0]}" }/
+          %p
+            %h5{"data-target" => "#recipe0","data-toggle" => "collapse"}
+              #{@recipes[0]}
+            #recipe0.collapse.in
+              #{@ingredients_list[0]}
 
 
         .span4
           %a(href="#{@values[1]}") 
             %img.img-rounded{:src => "#{@images[1]}"}/
-          %h5 #{@recipes[1]}
-          %p #{@ingredients_list[1]}
+          %p   
+            %h5{"data-target" => "#recipe1","data-toggle" => "collapse"}
+              #{@recipes[1]}
+            #recipe1.collapse.in
+              #{@ingredients_list[1]}
+
         
         .span4
           %a(href="#{@values[2]}") 
             %img.img-rounded{:src => "#{@images[2]}"}/
-          %h5 #{@recipes[2]}
-          %p #{@ingredients_list[2]}
-      
+          %p   
+            %h5{"data-target" => "#recipe2","data-toggle" => "collapse"}
+              #{@recipes[2]}
+            #recipe2.collapse.in
+              #{@ingredients_list[2]}
+    
       .row
         .span4
           %a(href="#{@values[3]}") 
             %img.img-rounded{:src => "#{@images[4]}"}/
-          %h5 #{@recipes[3]}
-          %p #{@ingredients_list[3]}
+          %p   
+            %h5{"data-target" => "#recipe3","data-toggle" => "collapse"}
+              #{@recipes[3]}
+            #recipe3.collapse.in
+              #{@ingredients_list[3]}
   
         .span4
           %a(href="#{@values[4]}")
             %img.img-rounded{:src => "#{@images[5]}"}/
-          %h5 #{@recipes[4]}
-          %p #{@ingredients_list[4]}
+          %p   
+            %h5{"data-target" => "#recipe4","data-toggle" => "collapse"}
+              #{@recipes[4]}
+            #recipe4.collapse.in
+              #{@ingredients_list[4]}
 
         .span4
           %a(href="#{@values[5]}")
             %img.img-rounded{:src => "#{@images[6]}"}/
-          %h5 #{@recipes[5]}
-          %p #{@ingredients_list[5]}
+          %p   
+            %h5{"data-target" => "#recipe5","data-toggle" => "collapse"}
+              #{@recipes[5]}
+            #recipe5.collapse.in
+              #{@ingredients_list[5]}
 
       .row
         .span4
           %a(href="#{@values[6]}")
             %img.img-rounded{:src => "#{@images[7]}"}/
-          %h5 #{@recipes[6]}
-          %p #{@ingredients_list[6]}
+          %p   
+            %h5{"data-target" => "#recipe6","data-toggle" => "collapse"}
+              #{@recipes[6]}
+            #recipe6.collapse.in
+              #{@ingredients_list[6]}
 
         .span4
           %a(href="#{@values[7]}")
             %img.img-rounded{:src => "#{@images[8]}"}/
-          %h5 #{@recipes[7]}
-          %p #{@ingredients_list[7]}
+          %p   
+            %h5{"data-target" => "#recipe7","data-toggle" => "collapse"}
+              #{@recipes[7]}
+            #recipe7.collapse.in
+              #{@ingredients_list[7]}
 
         .span4
           %a(href="#{@values[8]}")
             %img.img-rounded{:src => "#{@images[9]}"}/
-          %h5 #{@recipes[8]}
-          %p #{@ingredients_list[8]}
+          %p   
+            %h5{"data-target" => "#recipe8","data-toggle" => "collapse"}
+              #{@recipes[8]}
+            #recipe8.collapse.in
+              #{@ingredients_list[8]}
 
-
+    :javascript
+      $(document).ready( function () {
+        $('#recipe-image-1').popover({
+          trigger:"hover"
+        });
+      });
 
 
 
